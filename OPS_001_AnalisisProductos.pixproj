@@ -70,11 +70,31 @@
     <ProjectFileItem z:Id="i15">
       <IsDirectory>false</IsDirectory>
       <IsMain>false</IsMain>
-      <Path>Business\SP_GetToken.pix</Path>
+      <Path>Business\FetchProducts.pix</Path>
+    </ProjectFileItem>
+    <ProjectFileItem z:Id="i16">
+      <IsDirectory>false</IsDirectory>
+      <IsMain>false</IsMain>
+      <Path>Business\SaveToDatabase.pix</Path>
+    </ProjectFileItem>
+    <ProjectFileItem z:Id="i17">
+      <IsDirectory>false</IsDirectory>
+      <IsMain>false</IsMain>
+      <Path>Business\GenerateReport.pix</Path>
+    </ProjectFileItem>
+    <ProjectFileItem z:Id="i18">
+      <IsDirectory>false</IsDirectory>
+      <IsMain>false</IsMain>
+      <Path>Business\UploadOneDrive.pix</Path>
+    </ProjectFileItem>
+    <ProjectFileItem z:Id="i19">
+      <IsDirectory>false</IsDirectory>
+      <IsMain>false</IsMain>
+      <Path>Business\SubmitWebForm.pix</Path>
     </ProjectFileItem>
   </Files>
   <MasterUploadId i:nil="true" />
-  <Name>TI_001_AnalisisProductosEcommerce</Name>
+  <Name>OPS_001_AnalisisProductos</Name>
   <PlatformVersion xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
     <d2p1:_Build>3</d2p1:_Build>
     <d2p1:_Major>3</d2p1:_Major>
