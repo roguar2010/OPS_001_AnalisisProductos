@@ -8,7 +8,7 @@
 
 ## Descripción
 
-Robot RPA desarrollado con **PIX Studio** como prueba técnica del **Prueba Técnica PIX RPA 2026**.
+Robot RPA desarrollado con **PIX Studio** como **Prueba Técnica PIX RPA 2026**.
 
 Automatiza el análisis diario de productos de una tienda online ficticia, integrando consumo de API REST, almacenamiento en base de datos, generación de reportes Excel, sincronización con OneDrive y envío de formulario web.
 
@@ -98,7 +98,7 @@ Permiso:          Files.ReadWrite.All
 Flujo OAuth2:     client_credentials
 ```
 
-> ⚠️ **Nunca** incluir credenciales en el repositorio. Usar **PIX Credential Manager**.
+> ⚠️ **NO** se incluyen credenciales en el repositorio. Actualizar Data/Config.xlsx con credenciales de pruebas
 
 ---
 
@@ -112,12 +112,12 @@ git clone https://github.com/roguar2010/OPS_001_AnalisisProductos.git
 
 ### 2. Inicializar la base de datos
 
-**Motor:** SQL Server  
+**Motor:** SQL Server 2008 o superior 
 **Script de creación:** `Data/crear_db.sql`
 
 ```bash
-# Ejecutar en SQL Server Management Studio o sqlcmd
-sqlcmd -S servidor -d BaseDatos -i Data/crear_db.sql
+# Ejecutar en SQL Server Management Studio
+Script Data/crear_db.sql
 ```
 
 > El robot valida que el `id` no exista antes de insertar, evitando duplicados en ejecuciones repetidas.
@@ -148,7 +148,7 @@ AZ_CLIENT_SECRET → Client Secret generado en Azure
 ```
 1. Abrir PIX Studio
 2. Cargar proyecto OPS_001_AnalisisProductos
-3. Abrir Framework/Main.pix
+3. Abrir main.pix
 4. Ejecutar con F5 o desde PIX Runner
 ```
 
