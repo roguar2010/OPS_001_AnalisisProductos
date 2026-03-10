@@ -1,16 +1,16 @@
 # OPS_001_AnalisisProductos — PIX RPA
 
 ![Status](https://img.shields.io/badge/Status-Completado-success?style=for-the-badge)
-![DB](https://img.shields.io/badge/Microsoft_SQL_Server-CC2927?style=for-the-badge&logo=microsoftsqlserver)
 ![API](https://img.shields.io/badge/API-Fake%20Store%20API-FF6B35?style=for-the-badge)
+![BD](https://img.shields.io/badge/Microsoft_SQL_Server-CC2927?style=for-the-badge&logo=microsoftsqlserver)
 
 ---
 
 ## Descripción
-
-Robot RPA desarrollado con **PIX Studio** como **Prueba Técnica PIX RPA 2026**.
-
-Automatiza el análisis diario de productos de una tienda online ficticia, integrando consumo de API REST, almacenamiento en base de datos, generación de reportes Excel, sincronización con OneDrive y envío de formulario web.
+<div style="text-align: justify;">
+<p>Robot RPA desarrollado con <b>PIX Studio</b> como <b>Prueba Técnica PIX RPA 2026</b>.</p>
+<p>Automatiza el análisis diario de productos de una tienda online ficticia, integrando consumo de API REST, almacenamiento en base de datos, generación de reportes Excel, sincronización con OneDrive y envío de formulario web.</p>
+</div>
 
 ---
 
@@ -22,7 +22,7 @@ Fake Store API
       v
 ① GET /products ──────────────► Backup Productos_YYYY-MM-DD.json
       |                                        |
-      |                               OneDrive /RPA/Logs/
+      |                               OneDrive /RPA/Logs/ ◄──── Microsoft Graph API (client_credentials)
       v
 ② SQL Server (tabla Productos)
    └─ Validación anti-duplicados
@@ -86,7 +86,7 @@ OPS_001_AnalisisProductos/
 | Herramienta    | Versión           | Uso                              |
 |----------------|-------------------|----------------------------------|
 | PIX Studio     | Última disponible | Desarrollo y ejecución del robot |
-| SQL Server     | 2019 o superior   | Base de datos                    |
+| SQL Server     | 20008 o superior  | Base de datos                    |
 
 ### Cuenta Azure AD
 
@@ -117,6 +117,7 @@ git clone https://github.com/roguar2010/OPS_001_AnalisisProductos.git
 
 ```bash
 # Ejecutar en SQL Server Management Studio
+
 Script Data/crear_db.sql
 ```
 
@@ -136,12 +137,12 @@ AZ_CLIENT_SECRET → Client Secret generado en Azure
 |---------------------|-----------------------------------|
 | UrlFakeStoreApi     | https://fakestoreapi.com/products |
 | PathReports         | Reportes\                         |
-| LogFolder           | Logs\                             |
-| EvidenceFolder      | Evidencias\                       |
-| UrlFormProductosRPA | https://forms.google.com/...      |
+| PathLogs            | Logs\                             |
+| PathEvidences       | Evidencias\                       |
+| UrlGoogleForm       | https://forms.google.com/...      |
 | UrlOneDrive         | /RPA/                             |
 
-> Validar configuración completa. Actualizar `UrlOneDrive`, credenciales de Azure y cadena de conexión a la base de datos.
+> Validar configuración completa. Actualizar `UrlOneDrive`, `credenciales de Azure` y `cadena de conexión a la base de datos`.
 
 ### 5. Abrir y ejecutar en PIX Studio
 
@@ -219,6 +220,7 @@ int → Entero     intProductCount, intInserted
 dbl → Decimal    dblAvgPrice
 is  → Booleano   isSuccess, isFormSubmitted
 dt  → Fecha      dtToday
+tbl → DataTable  tblProductos
 ```
 
 **Reglas de arquitectura:**
@@ -243,7 +245,7 @@ dt  → Fecha      dtToday
 
 ## Autor
 
-**Ronald Guarán**  
+**Ronald Guarín**  
 Prueba Técnica PIX RPA 2026 — Marzo de 2026
 
 ---
